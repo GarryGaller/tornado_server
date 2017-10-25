@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="http://www.tornadoweb.org/en/stable/_static/favicon.ico"/>
+        <style>
+        a {
+            font-weight: normal;
+            font-size: 100%;
+        }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-weight:bold">Index of {{ title }}</h1>
+        <hr>
+        <ul class="standart">
+            <li><a href="../">../</a></li>
+            {% for item in items %}
+                <li><a href="{{ escape(item) }}">{{ escape(item) }}</a></li>
+            {% end %}
+        </ul>
+       <hr>
+    </body>
+</html>

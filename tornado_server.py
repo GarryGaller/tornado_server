@@ -118,7 +118,7 @@ class BaseHandler(tornado.web.RequestHandler):
         self.set_status(404)
         self.write(
             self.render_string(
-                "error.html",
+                "static/error.html",
                 title="Ой! Ошибочка вышла...", 
                 status_code="{0} {1}".format(status_code,http_status.phrase),
                 message=http_status.description,
@@ -139,7 +139,7 @@ class RootHandler(BaseHandler):
         debug_request_headers(self)
         
         items = await list_directory(ROOT)
-        self.render("listing.html",
+        self.render("static/listing.html",
                     title="/", 
                     items=items)
         # дебаговый вывод в консоль
