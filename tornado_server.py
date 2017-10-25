@@ -173,7 +173,7 @@ class OtherHandler(BaseHandler):
             # если запрашиваемый ресурс - директория, выводим листинг
             if os.path.isdir(filepath):
                 items = await list_directory(filepath)
-                self.render("listing.html",
+                self.render("static/listing.html",
                             title=unquote(self.request.path),
                             items=items)
                 # дебаговый вывод в консоль
